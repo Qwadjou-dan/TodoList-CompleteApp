@@ -71,7 +71,7 @@ const SignUp = () => {
         <div className="text-sm text-center text-gray-500 space-y-2">
           <p>
             Already have an account?{" "}
-            <a href="/login" className="text-primary hover:underline">
+            <a href="/" className="text-primary hover:underline">
               Log in
             </a>
           </p>

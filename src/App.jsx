@@ -1,12 +1,24 @@
 import React from "react";
 import SignUp from "./components/registration/signUp/SignUp";
+import SignIn from "./components/registration/signIn/SignIn";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+import RootLayout from "./components/layout/Layout";
 
 const App = () => {
-  return (
-    <div>
-      <SignUp />
-    </div>
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<RootLayout />}>
+        <Route index element={<SignIn />} />
+        <Route path="signup" element={<SignUp />} />
+      </Route>
+    )
   );
+  return <RouterProvider router={router} />;
 };
 
 export default App;
