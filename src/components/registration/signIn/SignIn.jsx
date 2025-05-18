@@ -1,6 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (username === "" || password === "") {
+      setErrorMessage("Please fill in all fields.");
+      return;
+    }
+
+    navigate("/tasks");
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-base-200 p-4">
       <div className="w-full max-w-md shadow-xl bg-base-100 rounded-xl p-8 space-y-6">
@@ -8,7 +25,7 @@ const SignIn = () => {
           Welcome Back
         </h1>
 
-        <form className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="username" className="label">
               <span className="label-text">Username</span>
@@ -19,6 +36,8 @@ const SignIn = () => {
               name="username"
               className="input input-bordered w-full"
               placeholder="your_username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               required
             />
           </div>
@@ -33,11 +52,15 @@ const SignIn = () => {
               name="password"
               className="input input-bordered w-full"
               placeholder="••••••••"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
 
-          <button className="btn btn-primary w-full mt-4">Sign In</button>
+          <button type="submit" className="btn btn-primary w-full mt-4">
+            Sign In
+          </button>
         </form>
 
         <div className="text-sm text-center text-gray-500 space-y-2">
