@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SignUp from "./components/registration/signUp/SignUp";
 import SignIn from "./components/registration/signIn/SignIn";
 import {
@@ -8,6 +8,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import RootLayout from "./components/layout/Layout";
+import TaskPage from "./components/tasks/taskPage/TaskPage";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -15,6 +16,7 @@ const App = () => {
       <Route path="/" element={<RootLayout />}>
         <Route index element={<SignIn />} />
         <Route path="signup" element={<SignUp />} />
+        <Route path="tasks" element={<TaskPage />} />
       </Route>
     )
   );

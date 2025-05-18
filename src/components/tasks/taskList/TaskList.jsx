@@ -1,5 +1,5 @@
 import React from "react";
-import { EditTask } from "./EditTask";
+import { EditTask } from "../editTask/EditTask";
 import { MdDelete } from "react-icons/md";
 
 const TaskList = ({
