@@ -1,13 +1,20 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const SignIn = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    if (location.state?.username) {
+      setUsername(location.state.username);
+    }
+  }, [location.state]);
+
+  const handleSignIn = (e) => {
     e.preventDefault();
 
     if (username.trim() && password.trim()) {
@@ -26,7 +33,7 @@ const SignIn = () => {
           Welcome Back
         </h1>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSignIn} className="space-y-4">
           <div>
             <label htmlFor="username" className="label">
               <span className="label-text">Username</span>

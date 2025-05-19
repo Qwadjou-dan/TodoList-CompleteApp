@@ -1,6 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+  const navigate = useNavigate();
+
+  const handleSignUp = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const username = formData.get("username");
+
+    navigate("/", {
+      state: { username },
+    });
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-base-200 p-4">
       <div className="w-full max-w-md shadow-xl bg-base-100 rounded-xl p-8 space-y-6">
@@ -8,7 +22,7 @@ const SignUp = () => {
           Create Account
         </h1>
 
-        <form className="space-y-4">
+        <form onSubmit={handleSignUp} className="space-y-4">
           <div>
             <label htmlFor="name" className="label">
               <span className="label-text">Full Name</span>
@@ -65,7 +79,9 @@ const SignUp = () => {
             />
           </div>
 
-          <button className="btn btn-primary w-full mt-4">Sign Up</button>
+          <button type="submit" className="btn btn-primary w-full mt-4">
+            Sign Up
+          </button>
         </form>
 
         <div className="text-sm text-center text-gray-500 space-y-2">
