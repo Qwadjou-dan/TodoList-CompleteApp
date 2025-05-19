@@ -31,7 +31,7 @@ const InputItems = ({ handleNewTask }) => {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto p-6 bg-base-100 rounded-xl shadow-md">
+    <div className="w-full max-w-2xl mx-auto p-6 bg-primary-content rounded-xl shadow-md">
       <h1 className="text-3xl font-bold text-primary mb-6 text-center">
         Add New Task
       </h1>

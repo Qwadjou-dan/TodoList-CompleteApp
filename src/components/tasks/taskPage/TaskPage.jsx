@@ -33,8 +33,8 @@ const TaskPage = () => {
         <div className="sm:w-[300px] p-2 w-full">
           <InputTask handleNewTask={handleNewTask} />
         </div>
-        <div className="flex-1 bg-[#85B8CB] p-4">
-          <h1 className="text-4xl mb-10 text-[#1D232A]">Task List</h1>
+        <div className="flex-1 bg-primary-content p-4">
+          <h1 className="text-4xl font-bold mb-10 text-primary">Task List</h1>
           <TaskList
             tasks={tasks}
             handleDeleteTask={handleDeleteTask}

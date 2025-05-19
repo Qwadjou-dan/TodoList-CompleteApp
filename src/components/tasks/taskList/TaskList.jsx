@@ -58,7 +58,7 @@ const TaskList = ({
 
               <button
                 onClick={() => handleDeleteTask(task.id)}
-                className="btn btn-error border-none"
+                className="btn btn-error hover:bg-[#DC2626] border-none"
               >
                 <span className="hidden md:inline">Delete</span>
                 <MdDelete className="md:hidden text-lg" />

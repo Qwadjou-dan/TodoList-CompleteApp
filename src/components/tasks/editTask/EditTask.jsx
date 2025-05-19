@@ -48,7 +48,7 @@ export const EditTask = ({ task, handleEditTask }) => {
             </button>
           </form>
 
-          <h2 className="text-3xl font-semibold text-[#85B8CB] mb-6">
+          <h2 className="text-3xl font-semibold text-primary mb-6">
             Edit Task Info
           </h2>
 
@@ -73,7 +73,9 @@ export const EditTask = ({ task, handleEditTask }) => {
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
               />
-              <span className="label-text-alt">Format: YYYY-MM-DD</span>
+              <span className="label-text-alt block mt-1  text-gray-400 text-sm">
+                Format: DD-MM-YYYY
+              </span>
             </label>
 
             <label className="form-control w-full">
@@ -84,13 +86,12 @@ export const EditTask = ({ task, handleEditTask }) => {
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
               />
-              <span className="label-text-alt">Format: HH:MM (24-hour)</span>
+              <span className="label-text-alt text-gray-400 text-sm">
+                Format: HH:MM (24-hour)
+              </span>
             </label>
 
-            <button
-              type="submit"
-              className="btn bg-[#85B8CB] text-black w-full"
-            >
+            <button type="submit" className="btn bg-primary text-white w-full">
               Save Changes
             </button>
           </form>
