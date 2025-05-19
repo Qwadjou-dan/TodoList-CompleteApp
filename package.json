@@ -7,10 +7,16 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "nodemon"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.7",
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.15.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
@@ -28,6 +34,12 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
+    "nodemon": "^3.1.10",
     "vite": "^6.3.5"
-  }
+  },
+  "description": "A simple todo list with both frontend and backend incorporated",
+  "main": "index.js",
+  "repository": "https://github.com/Qwadjou-dan/TodoList-CompleteApp.git",
+  "author": "Daniel Owusu <owusudaniel077@gmail.com>",
+  "license": "MIT"
 }
