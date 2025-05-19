@@ -10,12 +10,13 @@ const SignIn = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (username === "" || password === "") {
-      setErrorMessage("Please fill in all fields.");
-      return;
+    if (username.trim() && password.trim()) {
+      // Simulate authentication success
+      localStorage.setItem("username", username);
+      navigate("/tasks");
+    } else {
+      setError("Please enter both username and password.");
     }
-
-    navigate("/tasks");
   };
 
   return (

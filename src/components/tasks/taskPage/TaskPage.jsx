@@ -2,9 +2,11 @@
 import React, { useState } from "react";
 import InputTask from "../inputTask/InputTask";
 import TaskList from "../taskList/TaskList";
+import Navbar from "../../navbar/Navbar";
 
 const TaskPage = () => {
   const [tasks, setTasks] = useState([]);
+  const username = "username"; // Placeholder for username
 
   const handleNewTask = (newTask) => {
     setTasks([...tasks, newTask]);
@@ -25,18 +27,21 @@ const TaskPage = () => {
   };
 
   return (
-    <div className="flex flex-col sm:flex-row sm:pl-10 gap-20 min-h-screen">
-      <div className="sm:w-[300px] p-2 w-full">
-        <InputTask handleNewTask={handleNewTask} />
-      </div>
-      <div className="flex-1 bg-[#85B8CB] p-4">
-        <h1 className="text-4xl mb-10 text-[#1D232A]">Task List</h1>
-        <TaskList
-          tasks={tasks}
-          handleDeleteTask={handleDeleteTask}
-          handleCompletedTask={handleCompletedTask}
-          handleEditTask={handleEditTask}
-        />
+    <div className="h-screen flex flex-col">
+      <Navbar username={username} />
+      <div className="flex flex-col sm:flex-row sm:pl-10 gap-20 min-h-screen">
+        <div className="sm:w-[300px] p-2 w-full">
+          <InputTask handleNewTask={handleNewTask} />
+        </div>
+        <div className="flex-1 bg-[#85B8CB] p-4">
+          <h1 className="text-4xl mb-10 text-[#1D232A]">Task List</h1>
+          <TaskList
+            tasks={tasks}
+            handleDeleteTask={handleDeleteTask}
+            handleCompletedTask={handleCompletedTask}
+            handleEditTask={handleEditTask}
+          />
+        </div>
       </div>
     </div>
   );
